@@ -1,0 +1,20 @@
+imports:
+- path: 05_control_plane.py
+
+resources:
+- name: cluster-control-plane
+  type: 05_control_plane.py
+  properties:
+    infra_id: 'ocp4-change-me' 
+    zones: 
+    - 'us-east1-b'
+    - 'us-east1-c'
+    - 'us-east1-d'
+
+    control_subnet: 'https://www.googleapis.com/compute/v1/projects/change-me/regions/us-east1/subnetworks/master-subnet' 
+    image: 'https://www.googleapis.com/compute/v1/projects/change-me/global/images/ocp4-change-me-rhcos-image' 
+    machine_type: 'e2-standard-4' 
+   ange-meroot_volume_size: '100'
+    service_account_email: 'ocp4-sa.change-me.iam.gserviceaccount.com' 
+
+    ignition: '{"ignition":{"config":{"merge":[{"source":"https://api-int.ocp4.openshift.com:22623/config/master"}]},"security":{"tls":{"certificateAuthorities":[{"source":"data:text/plain;charset=utf-8;base64,LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURFRENDQWZpZ0F3SUJBZ0lJSDZnM0c3d2VHaUF3RFFZSktvWklodmNOQVFFTEJRQXdKakVTTUJBR0ExVUUKQ3hNSmIzQmxibk5vYVdaME1SQXdEZ1lEVlFRREV3ZHliMjkwTFdOaE1CNFhEVEl5TURZeU5qQXhOREl6TmxvWApEVE15TURZeU16QXhOREl6Tmxvd0pqRVNNQkFHQTFVRUN4TUpiM0JsYm5Ob2FXWjBNUkF3RGdZRFZRUURFd2R5CmIyOTBMV05oTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUE4LzBza2x1bnZOdVEKbHo5ZTErQUtVUlAzeFgvajdudXZZZVRiVlZSTjRLOENWeXRuUDE1VHZYcGcyQU5Ta2xYb3ZtSDVKZGNNVlpSVwpTREtHMVRpZ2dxT2prbzNkWjVqSUNObUQ4RmtQNVJBRFBTcWFBNUdnRTZzR3pocy9nMHl5dlNsbUZqZ2ZnWnQ0Cjd5K1E2ejhNeHpKSEJFVDVhVHFPQjhyT25Fd0VFZ01FMHl6dmxtTHVjVTNkMlRHdGkwSHAvS2hZWU9iS0lmNWMKQ0M2N1d1NjY4S3E5YkduU1JTcWN6WWRoWEsxdERaMGVvU2Y0N3VaeFJjU2ZpYmY5VjFPM2JhaVU2Njc0UEF4aApjNGh4VlJOTDVCbDVYa25uUExBT3V4eDJRdHI1d2cvSS9kVXNNTENmWWRZMTl5K0QvbnhNK0h2RDdWODlhTzhkCm1ZbGZRQWprZHdJREFRQUJvMEl3UURBT0JnTlZIUThCQWY4RUJBTUNBcVF3RHdZRFZSMFRBUUgvQkFVd0F3RUIKL3pBZEJnTlZIUTRFRmdRVWlPTmxDdnc4MWVxR1BvM0NQOUNySUhDOFZQc3dEUVlKS29aSWh2Y05BUUVMQlFBRApnZ0VCQUU3Q1NGZlozSzNDRDJ1bUtaN0JoOUhBcGxCQWh3eG5vZDhlc0VjN1Q4cDJ5T0hLWXFENjFmT2J5dlpFCmFSTldpTjBGb0p5bStDa1hIRVFkUE1XbWpqQXhkc1FhMkNSQjNpSE9xOGVmalBBVmRXK0gyVG1OaUdDZmx4dTkKR1FOQlBNVnBQKzRzOE1hNUlVd2p2dXhyWkVZNGpwckZiV2N1WUF1a21Kb0xJK1gzOFFjNGtIM25OMk9vTSt3KwppWUtJeHFxUWU2Y3BqTTkxSEJuRnlGb2xlVVJkQXhDT29EZDZTTjVsU0J2Tm00dUR2RW01QWpveFNhR0NvYWx6CndxT29IemlwbU1CUDI0U0FuU1JzVkpQZVhsVnRrY3I0dFRpYnVoY09BaTYzMEgxYmtPZkFHZWd4YWRlYjVLakgKelJpaUxNV1dVc3ZDRkVCa3pRYkVVQ28rM2RBPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg=="}]}},"version":"3.2.0"}}' 

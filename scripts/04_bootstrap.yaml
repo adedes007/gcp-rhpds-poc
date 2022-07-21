@@ -1,0 +1,18 @@
+imports:
+- path: 04_bootstrap.py
+
+resources:
+- name: cluster-bootstrap
+  type: 04_bootstrap.py
+  properties:
+    infra_id: 'ocp4-change-me' 
+    region: 'us-east1' 
+    zone: 'us-east1-b' 
+
+    cluster_network: 'https://www.googleapis.com/compute/v1/projects/change-me/global/networks/ocp-network' 
+    control_subnet: 'https://www.googleapis.com/compute/v1/projects/change-me/regions/us-east1/subnetworks/master-subnet' 
+    image: 'https://www.googleapis.com/compute/v1/projects/change-me/global/images/ocp4-change-me-rhcos-image' 
+    machine_type: 'e2-standard-2' 
+    root_volume_size: '50' 
+
+    bootstrap_ign: 'https://storage.googleapis.com/ocp4-change-me-bootstrap-ignition/bootstrap.ign?x-goog-signature=5d2e32dff402f49a166321d55a73b2be45eae9a3c15cf16d98e9cd0eafd61242a7e6b39fcc442ef8fde9a56b532fca5343f76b09387af76adca2ae6e258ee5e1cbf2993f0922a5a75555b3efb6583a2eecadd71b58b0f7ad08e594f1cb4d33cdb7e88641ee116046d3a6734041c2e12be381a9e2e2d96b76b6da5e55c622f606a2008365c985085b12872cb17e3f8c3a9fcd8fc3996aab55134863304731802b5aog-expires=3600&x-goog-signedheaders=host' 

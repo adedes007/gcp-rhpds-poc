@@ -1,0 +1,40 @@
+apiVersion: v1
+baseDomain: openshift.com
+compute:
+- architecture: amd64
+  hyperthreading: Enabled
+  name: worker
+  platform: {}
+  replicas: 2
+controlPlane:
+  architecture: amd64
+  hyperthreading: Enabled
+  name: master
+  platform: {}
+  replicas: 3
+metadata:
+  creationTimestamp: null
+  name: ocp4
+networking:
+  clusterNetwork:
+  - cidr: 10.128.0.0/14
+    hostPrefix: 23
+  machineNetwork:
+  - cidr: 10.1.0.0/16
+  networkType: OpenShiftSDN
+  serviceNetwork:
+  - 172.30.0.0/16
+platform:
+  gcp:
+    projectID: change-me
+    network: ocp-network
+    region: us-east1
+    controlPlaneSubnet: master-subnet
+    computeSubnet: worker-subnet
+publish: Internal
+pullSecret: '{"auths":{"ocp-bastion:5000": {"auth": "ABCDEFG","email": "nobody@gmail.com"}}}'
+sshKey: 'ENTER-YOUR-SSH-KEY-HERE'
+additionalTrustBundle: |
+  -----BEGIN CERTIFICATE-----
+  ENTER-YOUR-CERTIFICATE-HERE
+  -----END CERTIFICATE-----

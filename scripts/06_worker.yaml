@@ -1,0 +1,26 @@
+imports:
+- path: 06_worker.py
+
+resources:
+- name: 'worker-0' 
+  type: 06_worker.py
+  properties:
+    infra_id: 'ocp4-change-me' 
+    zone: 'us-east1-b' 
+    compute_subnet: 'https://www.googleapis.com/compute/v1/projects/change-me/regions/us-east1/subnetworks/worker-subnet' 
+    image: 'https://www.googleapis.com/compute/v1/projects/change-me/global/images/ocp4-change-me-rhcos-image' 
+    machine_type: 'e2-standard-4' 
+    root_volume_size: '100'
+    service_account_email: 'ocp4-sa.change-me.iam.gserviceaccount.com' 
+    ignition: '{"ignition":{"config":{"merge":[{"source":"https://api-int.ocp4.openshift.com:22623/config/worker"}]},"security":{"tls":{"certificateAuthorities":[{"source":"data:text/plain;charset=utf-8;base64,LS0dZRFZSMFRBUUgvQkFVd0F3RUIKL3pBZEJnTlZIUTRFRmdRVWlPTmxDdnc4MWVxR1BvM0NQOUNySUhDOFZQc3dEUVlKS29aSWh2Y05BUUVMQlFBRApnZ0VCQUU3Q1NGZlozSzNDRDJ1bUtaN0JoOUhBcGxCQWh3eG5vZDhlc0VjN1Q4cDJ5T0hLWXFENjFmT2J5dlpFCmFSTldpTjBGb0p5bStDa1hIRVFkUE1XbWpqQXhkc1FhMkNSQjNpSE9xOGVmalBBVmRXK0gyVG1OaUdDZmx4dTkKR1FOQlBNVnBQKzRzOE1hNUlVd2p2dXhyWkVZNGpwckZiV2N1WUF1a21Kb0xJK1gzOFFjNGtIM25OMk9vTSt3KwppWUtJeHFxUWU2Y3BqTTkxSEJuRnlGb2xlVVJkQXhDT29EZDZTTjVsU0J2Tm00dUR2RW01QWpveFNhR0NvYWx6CndxT29IemlwbU1CUDI0U0FuU1JzVkpQZVhsVnRrY3I0dFRpYnVoY09BaTYzMEgxYmtPZkFHZWd4YWRlYjVLakgKelJpaUxNV1dVc3ZDRkVCa3pRYkVVQ28rM2RBPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg=="}]}},"version":"3.2.0"}}' 
+- name: 'worker-1'
+  type: 06_worker.py
+  properties:
+    infra_id: 'ocp4-change-me' 
+    zone: 'us-east1-c' 
+    compute_subnet: 'https://www.googleapis.com/compute/v1/projects/change-me/regions/us-east1/subnetworks/worker-subnet' 
+    image: 'https://www.googleapis.com/compute/v1/projects/change-me/global/images/ocp4-change-me-rhcos-image' 
+    machine_type: 'e2-standard-4' 
+    root_volume_size: '100'
+    service_account_email: 'ocp4-sa.change-me.iam.gserviceaccount.com' 
+    ignition: '{"ignition":{"config":{"merge":[{"source":"https://api-int.ocp4.openshift.com:22623/config/worker"}]},"security":{"tls":{"certificateAuthorities":[{"source":"data:text/plain;charset=utf-8;base64,LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURFRENDQWZpZ0F3SUJBZ0lJSDZnM0c3d2VHaUF3RFFZSktvWklodmNOQVFFTEJRQXdKakVTTUJBR0ExVUUKCQUU3Q1NGZlozSzNDRDJ1bUtaN0JoOUhBcGxCQWh3eG5vZDhlc0VjN1Q4cDJ5T0hLWXFENjFmT2J5dlpFCmFSTldpTjBGb0p5bStDa1hIRVFkUE1XbWpqQXhkc1FhMkNSQjNpSE9xOGVmalBBVmRXK0gyVG1OaUdDZmx4dTkKR1FOQlBNVnBQKzRzOE1hNUlVd2p2dXhyWkVZNGpwckZiV2N1WUF1a21Kb0xJK1gzOFFjNGtIM25OMk9vTSt3KwppWUtJeHFxUWU2Y3BqTTkxSEJuRnlGb2xlVVJkQXhDT29EZDZTTjVsU0J2Tm00dUR2RW01QWpveFNhR0NvYWx6CndxT29IemlwbU1CUDI0U0FuU1JzVkpQZVhsVnRrY3I0dFRpYnVoY09BaTYzMEgxYmtPZkFHZWd4YWRlYjVLakgKelJpaUxNV1dVc3ZDRkVCa3pRYkVVQ28rM2RBPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg=="}]}},"version":"3.2.0"}}' 

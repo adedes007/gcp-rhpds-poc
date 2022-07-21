@@ -1,0 +1,14 @@
+imports:
+- path: 02_lb_int.py 
+resources: 
+- name: cluster-lb-int
+  type: 02_lb_int.py
+  properties:
+    cluster_network: 'https://www.googleapis.com/compute/v1/projects/change-me/global/networks/ocp-network'
+    control_subnet: 'https://www.googleapis.com/compute/v1/projects/change-me/regions/us-east1/subnetworks/master-subnet' 
+    infra_id: 'ocp4-change-me'
+    region: 'us-east1'
+    zones: 
+    - 'us-east1-b'
+    - 'us-east1-c'
+    - 'us-east1-d'
